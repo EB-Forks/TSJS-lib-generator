@@ -3113,6 +3113,11 @@
             "name": "WebAssembly",
             "methods": {
                 "method": {
+                    "compileStreaming": {
+                        "excluded-from": [
+                            "webassembly"
+                        ]
+                    },
                     "instantiate": {
                         "override-signatures": [
                             "instantiate(bytes: BufferSource, importObject?: Imports): Promise<WebAssemblyInstantiatedSource>",
@@ -3132,6 +3137,9 @@
                             {
                                 "type": "Imports"
                             }
+                        ],
+                        "excluded-from": [
+                            "webassembly"
                         ]
                     }
                 }
