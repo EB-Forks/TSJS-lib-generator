@@ -5744,6 +5744,15 @@ interface Console {
 declare var console: Console;
 
 declare namespace WebAssembly {
+    interface CompileError extends Error {
+    }
+
+    var CompileError: {
+        prototype: CompileError;
+        new(message?: string): CompileError;
+        (message?: string): CompileError;
+    };
+
     interface Global {
         value: any;
         valueOf(): any;
@@ -5761,6 +5770,15 @@ declare namespace WebAssembly {
     var Instance: {
         prototype: Instance;
         new(module: Module, importObject?: Imports): Instance;
+    };
+
+    interface LinkError extends Error {
+    }
+
+    var LinkError: {
+        prototype: LinkError;
+        new(message?: string): LinkError;
+        (message?: string): LinkError;
     };
 
     interface Memory {
@@ -5782,6 +5800,15 @@ declare namespace WebAssembly {
         customSections(moduleObject: Module, sectionName: string): ArrayBuffer[];
         exports(moduleObject: Module): ModuleExportDescriptor[];
         imports(moduleObject: Module): ModuleImportDescriptor[];
+    };
+
+    interface RuntimeError extends Error {
+    }
+
+    var RuntimeError: {
+        prototype: RuntimeError;
+        new(message?: string): RuntimeError;
+        (message?: string): RuntimeError;
     };
 
     interface Table {

@@ -2566,6 +2566,33 @@
                         }
                     }
                 }
+            },
+            "CompileError": {
+                "extends": "Error",
+                "constructor": {
+                    "override-signatures": [
+                        "new(message?: string): CompileError",
+                        "(message?: string): CompileError"
+                    ]
+                }
+            },
+            "LinkError": {
+                "extends": "Error",
+                "constructor": {
+                    "override-signatures": [
+                        "new(message?: string): LinkError",
+                        "(message?: string): LinkError"
+                    ]
+                }
+            },
+            "RuntimeError": {
+                "extends": "Error",
+                "constructor": {
+                    "override-signatures": [
+                        "new(message?: string): RuntimeError",
+                        "(message?: string): RuntimeError"
+                    ]
+                }
             }
         }
     },

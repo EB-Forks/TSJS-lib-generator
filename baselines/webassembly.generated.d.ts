@@ -3,12 +3,13 @@
 /////////////////////////////
 
 declare namespace WebAssembly {
-    interface CompileError {
+    interface CompileError extends Error {
     }
 
     var CompileError: {
         prototype: CompileError;
-        new(): CompileError;
+        new(message?: string): CompileError;
+        (message?: string): CompileError;
     };
 
     interface Global {
@@ -30,12 +31,13 @@ declare namespace WebAssembly {
         new(module: Module, importObject?: Imports): Instance;
     };
 
-    interface LinkError {
+    interface LinkError extends Error {
     }
 
     var LinkError: {
         prototype: LinkError;
-        new(): LinkError;
+        new(message?: string): LinkError;
+        (message?: string): LinkError;
     };
 
     interface Memory {
@@ -59,12 +61,13 @@ declare namespace WebAssembly {
         imports(moduleObject: Module): ModuleImportDescriptor[];
     };
 
-    interface RuntimeError {
+    interface RuntimeError extends Error {
     }
 
     var RuntimeError: {
         prototype: RuntimeError;
-        new(): RuntimeError;
+        new(message?: string): RuntimeError;
+        (message?: string): RuntimeError;
     };
 
     interface Table {
