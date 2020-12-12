@@ -19043,12 +19043,15 @@ declare namespace CSS {
 }
 
 declare namespace WebAssembly {
-    interface CompileError {
+    interface CompileError extends Error {
+        message: string;
+        name: string;
     }
     
     var CompileError: {
         prototype: CompileError;
-        new(): CompileError;
+        new(message?: string): CompileError;
+        (message?: string): CompileError;
     };
     
     interface Global {
@@ -19070,12 +19073,15 @@ declare namespace WebAssembly {
         new(module: Module, importObject?: Imports): Instance;
     };
     
-    interface LinkError {
+    interface LinkError extends Error {
+        message: string;
+        name: string;
     }
     
     var LinkError: {
         prototype: LinkError;
-        new(): LinkError;
+        new(message?: string): LinkError;
+        (message?: string): LinkError;
     };
     
     interface Memory {
@@ -19099,12 +19105,15 @@ declare namespace WebAssembly {
         imports(moduleObject: Module): ModuleImportDescriptor[];
     };
     
-    interface RuntimeError {
+    interface RuntimeError extends Error {
+        message: string;
+        name: string;
     }
     
     var RuntimeError: {
         prototype: RuntimeError;
-        new(): RuntimeError;
+        new(message?: string): RuntimeError;
+        (message?: string): RuntimeError;
     };
     
     interface Table {
