@@ -19051,14 +19051,14 @@ declare namespace WebAssembly {
         new(): CompileError;
     };
     
-    interface Global {
-        value: any;
-        valueOf(): any;
+    interface Global<T extends ValueType = ValueType> {
+        value: T extends 'i64' ? bigint : number;
+        valueOf(): T extends 'i64' ? bigint : number;
     }
     
     var Global: {
         prototype: Global;
-        new(descriptor: GlobalDescriptor, v?: any): Global;
+        new<T extends ValueType = ValueType>(descriptor: GlobalDescriptor<T>, v?: T extends 'i64' ? bigint : number): Global<T>;
     };
     
     interface Instance {
@@ -19119,9 +19119,9 @@ declare namespace WebAssembly {
         new(descriptor: TableDescriptor): Table;
     };
     
-    interface GlobalDescriptor {
+    interface GlobalDescriptor<T extends ValueType = ValueType> {
         mutable?: boolean;
-        value: ValueType;
+        value: T;
     }
     
     interface MemoryDescriptor {
