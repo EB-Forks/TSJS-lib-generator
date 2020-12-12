@@ -2285,18 +2285,6 @@
                         "new(message?: string): CompileError",
                         "(message?: string): CompileError"
                     ]
-                },
-                "properties": {
-                    "property": {
-                        "name": {
-                            "name": "name",
-                            "type": "DOMString"
-                        },
-                        "message": {
-                            "name": "message",
-                            "type": "DOMString"
-                        }
-                    }
                 }
             },
             "LinkError":{
@@ -2309,18 +2297,6 @@
                         "new(message?: string): LinkError",
                         "(message?: string): LinkError"
                     ]
-                },
-                "properties": {
-                    "property": {
-                        "name": {
-                            "name": "name",
-                            "type": "DOMString"
-                        },
-                        "message": {
-                            "name": "message",
-                            "type": "DOMString"
-                        }
-                    }
                 }
             },
             "RuntimeError":{
@@ -2333,18 +2309,6 @@
                         "new(message?: string): RuntimeError",
                         "(message?: string): RuntimeError"
                     ]
-                },
-                "properties": {
-                    "property": {
-                        "name": {
-                            "name": "name",
-                            "type": "DOMString"
-                        },
-                        "message": {
-                            "name": "message",
-                            "type": "DOMString"
-                        }
-                    }
                 }
             }
         }

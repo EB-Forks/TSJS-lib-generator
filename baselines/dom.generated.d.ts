@@ -19044,8 +19044,6 @@ declare namespace CSS {
 
 declare namespace WebAssembly {
     interface CompileError extends Error {
-        message: string;
-        name: string;
     }
     
     var CompileError: {
@@ -19074,8 +19072,6 @@ declare namespace WebAssembly {
     };
     
     interface LinkError extends Error {
-        message: string;
-        name: string;
     }
     
     var LinkError: {
@@ -19106,8 +19102,6 @@ declare namespace WebAssembly {
     };
     
     interface RuntimeError extends Error {
-        message: string;
-        name: string;
     }
     
     var RuntimeError: {
