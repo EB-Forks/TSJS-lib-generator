@@ -325,9 +325,6 @@
             },
             "TableKind": {
                 "legacy-namespace": "WebAssembly"
-            },
-            "ValueType": {
-                "legacy-namespace": "WebAssembly"
             }
         }
     },
@@ -2626,13 +2623,13 @@
                 ],
                 "constructor": {
                     "override-signatures": [
-                        "new<T extends ValueType = ValueType>(descriptor: GlobalDescriptor<T>, v?: T extends 'i64' ? bigint : number): Global<T>"
+                        "new<T extends ValueType = ValueType>(descriptor: GlobalDescriptor<T>, v?: ValueTypeMap[T]): Global<T>"
                     ]
                 },
                 "properties": {
                     "property": {
                         "value": {
-                            "override-type": "T extends 'i64' ? bigint : number"
+                            "override-type": "ValueTypeMap[T]"
                         }
                     }
                 },
@@ -2640,7 +2637,7 @@
                     "method": {
                         "valueOf": {
                             "override-signatures": [
-                                "valueOf(): T extends 'i64' ? bigint : number"
+                                "valueOf(): ValueTypeMap[T]"
                             ]
                         }
                     }

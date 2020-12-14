@@ -5714,13 +5714,13 @@ declare var console: Console;
 
 declare namespace WebAssembly {
     interface Global<T extends ValueType = ValueType> {
-        value: T extends 'i64' ? bigint : number;
-        valueOf(): T extends 'i64' ? bigint : number;
+        value: ValueTypeMap[T];
+        valueOf(): ValueTypeMap[T];
     }
     
     var Global: {
         prototype: Global;
-        new<T extends ValueType = ValueType>(descriptor: GlobalDescriptor<T>, v?: T extends 'i64' ? bigint : number): Global<T>;
+        new<T extends ValueType = ValueType>(descriptor: GlobalDescriptor<T>, v?: ValueTypeMap[T]): Global<T>;
     };
     
     interface Instance {
@@ -5792,6 +5792,13 @@ declare namespace WebAssembly {
         maximum?: number;
     }
     
+    interface ValueTypeMap {
+        f32: number;
+        f64: number;
+        i32: number;
+        i64: bigint;
+    }
+    
     interface WebAssemblyInstantiatedSource {
         instance: Instance;
         module: Module;
@@ -5799,7 +5806,7 @@ declare namespace WebAssembly {
     
     type ImportExportKind = "function" | "global" | "memory" | "table";
     type TableKind = "anyfunc";
-    type ValueType = "f32" | "f64" | "i32" | "i64";
+    type ValueType = keyof ValueTypeMap;
     type ExportValue = Function | Global | Memory | Table;
     type Exports = Record<string, ExportValue>;
     type ImportValue = ExportValue | number;
